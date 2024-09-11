@@ -42,12 +42,12 @@ An event management platform that allows users, vendors, and admins to handle ev
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
+    git clone https://github.com/Abhay2133/event_management
     ```
    
 2. Navigate to the project directory:
     ```bash
-    cd your-repo-name
+    cd event_management
     ```
 
 3. Install dependencies:
@@ -62,7 +62,7 @@ An event management platform that allows users, vendors, and admins to handle ev
     JWT_SECRET=your_jwt_secret
     ```
 
-5. Run database migrations (if any):
+5. Run database migrations (under development):
     ```bash
     npx prisma migrate dev
     ```
