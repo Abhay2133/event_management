@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Event Management Web App
 
-## Getting Started
+An event management platform that allows users, vendors, and admins to handle event organization, product management, order tracking, and transactions. The app supports three roles: `Admin`, `Vendor`, and `User`, each with specific functionality.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Users
+- Select vendors for events
+- Add products to carts
+- Manage guest lists
+- Manage product carts
+- Track order status
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Vendors
+- Edit product information
+- Verify transactions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Admins
+- Manage users, vendors, and their memberships
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- **Frontend**: Next.js (React Framework)
+- **Backend**: Node.js with Next.js App Router
+- **Database**: PostgreSQL
+- **Authentication**: JWT-based login for Users, Vendors, and Admins
+- **API**: RESTful APIs using Next.js App Router
+- **Token Management**: Secure login and session handling using `LoginTokens` table
 
-To learn more about Next.js, take a look at the following resources:
+## Database Schema
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Users**: Handles all user roles (Admin, Vendor, User)
+- **Vendors**: Vendor-specific information
+- **Products**: Details of items vendors offer
+- **Carts**: User shopping carts
+- **Orders**: Order details and status
+- **Transactions**: Tracks payments and verifications
+- **LoginTokens**: Stores user login sessions
+- **GuestList**: Manages guest lists for events
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Installation
 
-## Deploy on Vercel
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/your-repo-name.git
+    ```
+   
+2. Navigate to the project directory:
+    ```bash
+    cd your-repo-name
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Create a `.env.local` file in the root directory and add your environment variables:
+    ```bash
+    DATABASE_URL=postgres://postgres:root@localhost:5432/your-database
+    HASH_KEY=your_hash_key
+    JWT_SECRET=your_jwt_secret
+    ```
+
+5. Run database migrations (if any):
+    ```bash
+    npx prisma migrate dev
+    ```
+
+6. Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+7. Visit `http://localhost:3000` to view the app.
+
+## API Endpoints
+
+### Authentication
+- **Admin Login**: `/api/login/admin`
+- **User Login**: `/api/login/user`
+- **Vendor Login**: `/api/login/vendor`
+- **User Signup**: `/api/user/signup`
+- **Vendor Signup**: `/api/vendor/signup`
+
+## Usage
+
+- Users can sign up, log in, select vendors, and manage their event details.
+- Vendors can log in, manage their products, and verify orders.
+- Admins can manage users and vendors, and oversee the platform.
+
+## Contributing
+
+Feel free to contribute to this project by submitting a pull request or opening an issue. All contributions are welcome!
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+### Author
+
+Developed by [Your Name](https://github.com/your-username).
