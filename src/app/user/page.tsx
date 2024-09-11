@@ -1,6 +1,10 @@
+"use client"
+
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function User(props: any) {
+
   return (
     <main>
       <header className="text-center py-6 bg-blue-800 text-gray-200 text-3xl">
@@ -32,7 +36,7 @@ export default function User(props: any) {
           Order Status
         </Link>
         <Link
-          href="/user/logout"
+          href="/api/logout"
           className=" mt-8 hover:bg-[#3c63dd] text-center block py-3 px-8 bg-[#3c63b0] rounded-full text-gray-100"
         >
           Logout

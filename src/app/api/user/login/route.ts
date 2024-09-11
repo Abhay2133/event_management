@@ -16,7 +16,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: result.message }, { status: 401 });
     }
 
-    const payload = { user_id: result.user_id };
+    const payload = { user_id: result.user_id , role : "User"};
     const token = await signToken(payload);
 
     const cookie = serialize("auth_token", token, {
